@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment1.Util.Command
+namespace Assignment1.Commands
 {
     interface ICommand
     {
         void Execute();
-    }
-
-    interface ISelectable
-    {
-        void Command();
     }
 }

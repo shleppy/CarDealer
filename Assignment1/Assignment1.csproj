@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\IMenuCommand.cs" />
     <Compile Include="DBAccess\REST.cs" />
     <Compile Include="DBAccess\InMemory.cs" />
-    <Compile Include="Utils\Command.cs" />
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Utils\Strategy.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="CarDealer.cs" />
