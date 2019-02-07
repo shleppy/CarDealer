@@ -212,6 +212,7 @@ namespace Assignment1
             {
                 Vehicles.Remove(vehicle);
             }
+            // todo
         }
 
 
