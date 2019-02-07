@@ -43,11 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBAccess\REST.cs" />
+    <Compile Include="DBAccess\InMemory.cs" />
+    <Compile Include="Utils\Command.cs" />
+    <Compile Include="Utils\Strategy.cs" />
+    <Compile Include="Utils\TextUtils.cs" />
+    <Compile Include="CarDealer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Vehicles\Truck.cs" />
+    <Compile Include="Vehicles\Vehicles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
