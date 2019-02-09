@@ -20,7 +20,7 @@ namespace Assignment1.Commands
             VehicleType type = input == "truck" ? VehicleType.TRUCK : VehicleType.CAR;
 
             Vehicle v = (type == VehicleType.CAR) ? (Vehicle)GetCarInfo() : (Vehicle)GetTruckInfo();
-            v = GetAdditionalInfo(v);
+            GetAdditionalInfo(v);
 
             FinalizeCommand(database, v);
         }
@@ -44,17 +44,19 @@ namespace Assignment1.Commands
             return new Truck(brandModel[0], brandModel[1], maxweight, license, price, yearBuilt, VehicleType.TRUCK);
         }
 
-        private Vehicle GetAdditionalInfo(Vehicle v)
+        private void GetAdditionalInfo(Vehicle v)
         {
+            if (!(v is Car))
+                return;
+
             bool answerIsYes = InputHelper.GetValidConfirmationInput("\nWould you like to enter additional info? (y/n): ");
             while (answerIsYes)
             {
                 PrintAddtionalCarCommands();
                 int command = InputHelper.GetValidIntegerInput("\tEnter a command: ");   
-                v = CommandFactory.GetCarInfoCommand(command).Execute(v);
+                v = CommandFactory.GetCarInfoCommand(command).Execute((Car)v);
                 answerIsYes = InputHelper.GetValidConfirmationInput("\nWould you like to add more? (y/n): ");
             }
-            return v;
         } 
 
         private void PrintAddtionalCarCommands()
@@ -71,13 +73,13 @@ namespace Assignment1.Commands
         private void FinalizeCommand(IDBAccess<Vehicle> database, Vehicle v)
         {
             PrintSummary(v);
-            if (InputHelper.GetValidConfirmationInput("\nAre you sure you want to add this vehicle to the database? (y/n): "))
+            if (InputHelper.GetValidConfirmationInput("\n\tAre you sure you want to add this vehicle to the database? (y/n): "))
             {
                 database.POST(v);
             }
             else
             {
-                Console.WriteLine("Command aborted.");
+                Console.WriteLine("\tCommand aborted.");
             }
         }
 

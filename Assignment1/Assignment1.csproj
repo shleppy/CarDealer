@@ -62,7 +62,7 @@
     <Compile Include="Strategy\SaleStrategy.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="CarDealer.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicles\Car.cs" />
     <Compile Include="Vehicles\Truck.cs" />

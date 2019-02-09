@@ -19,6 +19,9 @@ namespace Assignment1
             Console.WriteLine(TextProvider.WELCOME_TEXT);
             // TODO Implement functionality
 
+            Console.WriteLine(TextProvider.MAIN_MENU);
+            Console.WriteLine(TextProvider.COMMANDS);
+
             IMenuCommand command = new AddVehicleCommand();
             command.Execute(Database);
 

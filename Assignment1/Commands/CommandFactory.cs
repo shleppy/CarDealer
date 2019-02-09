@@ -10,15 +10,15 @@ namespace Assignment1.Commands
 {
     class CommandFactory
     {
-        public static IVehicleModCommand<Vehicle> GetCarInfoCommand(int command)
-        {
+        public static IVehicleModCommand<Car> GetCarInfoCommand(int command)
+        {       
             switch (command)
             {
-                case 1: return (IVehicleModCommand<Vehicle>)new ChangeFuelTypeCommand();
-                case 2: return (IVehicleModCommand<Vehicle>)new ChangeHorsePowerCommand();
-                case 3: return (IVehicleModCommand<Vehicle>)new ChangeNrOfSeatsCommand(); 
-                case 4: return (IVehicleModCommand<Vehicle>)new ChangeColorCommand();
-                default: return new ChangeNothingCommand(); ;
+                case 1: return new ChangeFuelTypeCommand();
+                case 2: return new ChangeHorsePowerCommand();
+                case 3: return new ChangeNrOfSeatsCommand(); 
+                case 4: return new ChangeColorCommand();
+                default: return new ChangeNothingCommand<Car>(); ;
             }
         }
     }

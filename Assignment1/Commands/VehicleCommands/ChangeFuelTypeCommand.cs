@@ -9,7 +9,7 @@ using Assignment1.Vehicles;
 
 namespace Assignment1.Commands.VehicleCommands
 {
-    class ChangeFuelTypeCommand<T> : IVehicleModCommand<Car>
+    class ChangeFuelTypeCommand : IVehicleModCommand<Car>
     {
         public Car Execute(Car v)
         {

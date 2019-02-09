@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Assignment1.Commands.VehicleCommands
 {
-    class ChangeNothingCommand : IVehicleModCommand<Vehicle>
+    class ChangeNothingCommand<T> : IVehicleModCommand<T>
+        where T : Vehicle
     {
-        public Vehicle Execute(Vehicle v)
+        public T Execute(T v)
         {
             Console.WriteLine("Exiting...");
             return v;

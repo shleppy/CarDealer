@@ -17,15 +17,20 @@ namespace Assignment1.Utils
                                             + "    | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/|  $$$$$$$| $$            | $$$$$$$/|  $$$$$$$|  $$$$$$$| $$|  $$$$$$$| $$\n"
                                             + "    |__/   |__/  |__/ \\_______/       \\______/  \\_______/|__/            |_______/  \\_______/ \\_______/|__/ \\_______/|__/\n";
 
-        public static string MAIN_MENU = " ==========================\n"
-                                       + " ==       MAIN MENU      ==\n"
-                                       + " ==========================\n\n"
-                                       + " Select one of the following:\n\n";
+        public static string MAIN_MENU = " ============================================\n"
+                                       + " ===              MAIN MENU               ===\n"
+                                       + " ============================================\n\n"
+                                       + "Welcome to the administration page.";
 
-        public static string[] COMMANDS =
-        {
-
-        };
+        public static string COMMANDS = " Select one of the following:\n" +
+            "\t1) List All Vehicles\n" +
+            "\t2) Search For Vehicles Submenu\n" +
+            "\t3) Add Vehicle\n" +
+            "\t4) Remove Vehicle\n" +
+            "\t5) Increase All Prices \n" +
+            "\t6) Decrease All Prices \n" +
+            "\t7) Display Overview \n" +
+            "\th) Help Menu" + "\tq) Quit\n";
     }
 
     static class InputHelper
