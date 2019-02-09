@@ -9,13 +9,15 @@ namespace Assignment1.Vehicles
     public class Car : Vehicle
     {
 
-        public Car(CarBrandModel model, string licensePlate, int price, int yearBuilt, VehicleType type)
+        public Car(string brand, string model, string licensePlate, int price, int yearBuilt, VehicleType type)
             : base(licensePlate, price, yearBuilt, type)
         {
-            CarModel = model;
+            Brand = brand;
+            Model = model;
         }
 
-        public CarBrandModel CarModel { get; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
         public FuelType FuelType { get; set; }
         public int HorsePower { get; set; }
         public int NrOfSeats { get; set; }

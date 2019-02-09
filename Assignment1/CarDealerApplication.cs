@@ -1,4 +1,5 @@
-﻿using Assignment1.DBAccess;
+﻿using Assignment1.Commands;
+using Assignment1.DBAccess;
 using Assignment1.Utils;
 using Assignment1.Vehicles;
 using System;
@@ -11,18 +12,18 @@ namespace Assignment1
 {
     class CarDealerApplication
     {
-        private static readonly IREST<Vehicle> Database = new InMemoryDB();
+        private static readonly IDBAccess<Vehicle> Database = new InMemoryDB();
 
         public void Run()
         {
             Console.WriteLine(TextProvider.WELCOME_TEXT);
             // TODO Implement functionality
 
-            do
-            {
+            IMenuCommand command = new AddVehicleCommand();
+            command.Execute(Database);
 
-            } while (true);
-
+            // wait for input to exit
+            Console.WriteLine("\nPress enter to exit...");
             Console.ReadLine();
         }
     }

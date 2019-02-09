@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.DBAccess
 {
-    interface IREST<T>
+    interface IDBAccess<T>
     {
         T GET(int id);
         T POST(T t);

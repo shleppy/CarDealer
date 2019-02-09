@@ -8,14 +8,16 @@ namespace Assignment1.Vehicles
 {
     class Truck : Vehicle
     {
-        public Truck(TruckBrandModel model, int maxWeight, string licensePlate, int price, int yearBuilt, VehicleType type)
+        public Truck(string brand, string model, int maxWeight, string licensePlate, int price, int yearBuilt, VehicleType type)
             : base(licensePlate, price, yearBuilt, type)
         {
-            TruckModel = model;
+            Brand = brand;
+            Model = model;
             MaxWeight = maxWeight;
         }
 
-        public TruckBrandModel TruckModel { get; }
+        public string Brand { get; }
+        public string Model { get; }
         public int MaxWeight { get; set; }
     }
 }

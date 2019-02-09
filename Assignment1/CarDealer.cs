@@ -1,4 +1,4 @@
-﻿using Assignment1.Utils.Strategy;
+﻿using Assignment1.Strategy;
 using Assignment1.Vehicles;
 using System;
 using System.Collections.Generic;
@@ -94,7 +94,6 @@ namespace Assignment1
         {
             return this.Vehicles.Where(x => x.Price >= low && x.Price <= high);
         }
-
-
+        
     }
 }

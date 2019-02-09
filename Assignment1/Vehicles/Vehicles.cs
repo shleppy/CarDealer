@@ -1,4 +1,4 @@
-﻿using Assignment1.Utils.Strategy;
+﻿using Assignment1.Strategy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +10,7 @@ namespace Assignment1.Vehicles
 {
     public enum VehicleType { TRUCK, CAR, MOTORCYCLE }
 
-    public enum FuelType { GASOLINE, DIESEL, ELETRIC, HYBRIDE }
-
-    public enum CarBrandModel
-    {
-        BMW_M3, BMW_M4, BMW_M5, BMW_M6, BMW_MX6,
-        AUDI_RS3, AUDI_RS4, AUDI_RS6, AUDI_RS7, AUDI_SQ8,
-        VOLKSWAGEN_GOLFR, VOLKSWAGEN_ARTEONR, VOLKSWAGEN_GOLFGTI
-    }
-
-    public enum TruckBrandModel
-    {
-        MERCEDES_ACTROS, MERCEDES_AROCOS, MERCEDES_eARCTROS,
-    }
+    public enum FuelType { GASOLINE, DIESEL, ELECTRIC, HYBRIDE }
 
     public abstract class Vehicle
     {
@@ -40,12 +28,12 @@ namespace Assignment1.Vehicles
 
         public Vehicle(string licensePlate, int price, int yearBuilt, VehicleType type)
         {
-            if (licensePlate == null || licensePlate.Length < 4 || licensePlate.Length > 10)
+            /*if (licensePlate == null || licensePlate.Length < 4 || licensePlate.Length > 10)
                 throw new ArgumentException("A licencse plate must be provided and in the range 4-10");
             if (yearBuilt < 2015)
                 throw new ArgumentOutOfRangeException("We only sell recent models of cars.");
             if (price < 30000)
-                throw new ArgumentException("The vehicle seems too cheap to sell.");
+                throw new ArgumentException("The vehicle seems too cheap to sell.");*/
 
             basePrice = price;
             LicensePlate = licensePlate;

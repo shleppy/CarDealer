@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.DBAccess
 {
-    class InMemoryDB : IREST<Vehicle>
+    class InMemoryDB : IDBAccess<Vehicle>
     {
         CarDealer Dealer;
 
