@@ -22,7 +22,7 @@ namespace Assignment1.Utils
                                        + " ==========================\n\n"
                                        + " Select one of the following:\n\n";
 
-        public static string[] COMMAND =
+        public static string[] COMMANDS =
         {
 
         };

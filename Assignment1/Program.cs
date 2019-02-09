@@ -11,21 +11,12 @@ using System.Threading.Tasks;
 
 namespace Assignment1
 {
-    class Program
+    class MainProgram
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Run();
-        }
-
-        static void Run()
-        {
-            Console.WriteLine(TextProvider.WELCOME_TEXT);
-            // TODO Implement functionality
-            
-            Console.ReadLine();
+            CarDealerApplication app = new CarDealerApplication();
+            app.Run();
         }
     }
-
-
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.DBAccess
 {
-    abstract class InMemoryDB : IREST<Vehicle>
+    class InMemoryDB : IREST<Vehicle>
     {
         CarDealer Dealer;
 
@@ -18,17 +18,24 @@ namespace Assignment1.DBAccess
 
         public void DELETE(int id)
         {
-            throw new NotImplementedException();
+            Dealer.RemoveVehicle(id);
         }
 
         public Vehicle GET(int id)
         {
-            return Dealer.Find
+            return Dealer.FindVehicleByID(id);
+        }
+
+        public Vehicle GET(string license)
+        {
+            return Dealer.FindVehicleByLicensePlate(license);
         }
 
         public Vehicle POST(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            Vehicle v = vehicle;
+            Dealer.AddVehicle(v);
+            return v;
         }
 
         public void PUT(int id)

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assignment1.Vehicles
 {
-    class Car : Vehicle
+    public class Car : Vehicle
     {
+
         public Car(CarBrandModel model, string licensePlate, int price, int yearBuilt, VehicleType type)
             : base(licensePlate, price, yearBuilt, type)
         {

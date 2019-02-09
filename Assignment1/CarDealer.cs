@@ -11,8 +11,34 @@ namespace Assignment1
     public class CarDealer
     {
         List<Vehicle> Vehicles = new List<Vehicle>();
-        
+
         // LINQ methods
+
+        /// <summary>
+        /// Add vehicle to list
+        /// </summary>
+        /// <param name="v"></param>
+        public void AddVehicle(Vehicle v) => Vehicles.Add(v);
+
+        /// <summary>
+        /// Remove vehicle from list
+        /// </summary>
+        /// <param name="vehicleId"></param>
+        public void RemoveVehicle(int vehicleId)
+        {
+            Vehicles.Remove(Vehicles.Find(x => x.VehicleId == vehicleId));
+        }
+
+        /// <summary>
+        /// Retrieve all vehicles
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Vehicle> FindAllVehicles() => this.Vehicles;
+
+        /// <summary>
+        /// Returns the vehicle corresponding to the specified ID.
+        /// </summary>
+        public Vehicle FindVehicleByID(int vehicleId) => Vehicles.Find(x => x.VehicleId == vehicleId);
 
         /// <summary>
         /// Returns total number of vehicles.
@@ -69,9 +95,6 @@ namespace Assignment1
             return this.Vehicles.Where(x => x.Price >= low && x.Price <= high);
         }
 
-        /// <summary>
-        /// Returns the vehicle corresponding to the specified ID.
-        /// </summary>
-        public Vehicle FindVehicleByID(int vehicleId) => Vehicles.Find(x => x.VehicleId == vehicleId);
+
     }
 }
