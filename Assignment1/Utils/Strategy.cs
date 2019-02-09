@@ -9,7 +9,7 @@ namespace Assignment1.Utils.Strategy
     /// <summary>
     /// Strategy Pattern for defining the price of a vehicle
     /// </summary>
-    interface IPriceStrategy { int Price(int rawPrice); }
+    public interface IPriceStrategy { int Price(int rawPrice); }
 
     /// <summary>
     /// Default Strategy should be used to get the base price.
@@ -17,7 +17,7 @@ namespace Assignment1.Utils.Strategy
     /// <returns>
     /// The base price
     /// </returns>
-    class NormalPriceStrategy : IPriceStrategy
+    public class NormalPriceStrategy : IPriceStrategy
     {
         public int Price(int rawPrice) { return rawPrice; }
     }
@@ -35,7 +35,7 @@ namespace Assignment1.Utils.Strategy
     /// get the base price of 100000 minus the 30%. BASE - (30% of BASE).
     /// Returns: 70000
     /// </example>
-    class SalePriceStrategy : IPriceStrategy
+    public class SalePriceStrategy : IPriceStrategy
     {
         public int SalePercentage { get; }
 
@@ -57,11 +57,11 @@ namespace Assignment1.Utils.Strategy
     /// get the base price of 100000 plus the 30%. BASE + (30% of BASE).
     /// Returns: 130000
     /// </example>
-    class InflationPriceStrategy : IPriceStrategy
+    public class InflatedPriceStrategy : IPriceStrategy
     {
         public int InflationPercentage { get; }
 
-        public InflationPriceStrategy(int salePercentage) { InflationPercentage = salePercentage; }
+        public InflatedPriceStrategy(int salePercentage) { InflationPercentage = salePercentage; }
 
         public int Price(int rawPrice) { return rawPrice + (int)((double)InflationPercentage / 100 * rawPrice); }
     }

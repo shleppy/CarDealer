@@ -24,9 +24,19 @@ namespace Assignment1.Vehicles
         MERCEDES_ACTROS, MERCEDES_AROCOS, MERCEDES_eARCTROS,
     }
 
-    abstract class Vehicle
+    public abstract class Vehicle
     {
         private static int nextVehicleId;
+
+        private readonly int basePrice;
+
+        public int VehicleId { get; private set; }
+        public string LicensePlate { get; set; }
+        public VehicleType Type { get; private set; }
+        public int YearBuilt { get; }
+        public int Age { get => DateTime.Today.Year - YearBuilt; }
+        public IPriceStrategy PriceStrategy { get; set; }
+        public int Price { get => PriceStrategy.Price(basePrice); }
 
         public Vehicle(string licensePlate, int price, int yearBuilt, VehicleType type)
         {
@@ -37,21 +47,13 @@ namespace Assignment1.Vehicles
             if (price < 30000)
                 throw new ArgumentException("The vehicle seems too cheap to sell.");
 
+            basePrice = price;
             LicensePlate = licensePlate;
-            Price = price;
             Type = type;
             YearBuilt = yearBuilt;
             PriceStrategy = new NormalPriceStrategy();
             VehicleId = Interlocked.Increment(ref nextVehicleId);
         }
-
-        public string LicensePlate { get; set; }
-        public int Price { get; set; }
-        public VehicleType Type { get; private set; }
-        public int VehicleId { get; private set; }
-        public int YearBuilt { get; }
-        public int Age { get => DateTime.Today.Year - YearBuilt; }
-        public IPriceStrategy PriceStrategy { get; set; }
 
         public override string ToString()
         {
