@@ -2,7 +2,7 @@
 Homework assignment for module Programming Paradigms: OOP command line application in C#
 
 ## The Project
-The project is a windows-based command line application written in C#.
+The project is a two-part homework assignment where both are windows-based command line applications written in C#.
 
 ## Assignment
 Assignment Part 1
@@ -42,4 +42,4 @@ a vehicle in a certain price range. Think about reasonable attributes and functi
 - Proper class design
 
 ### Extra
-This if the first time for me programming in C#, so the project will contain many different concepts of which some may not seem of direct proper use to the project. They are however, general exercises and aid towards understanding the C# syntax and conventions.
+This is the first time for me programming in C#, so the project will contain many different concepts of which some may not seem of direct proper use to the project. They are however, general exercises and aid towards understanding the C# syntax and conventions.
