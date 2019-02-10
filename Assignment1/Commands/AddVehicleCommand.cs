@@ -15,7 +15,7 @@ namespace Assignment1.Commands
             Console.Write(command);
             string input = Console.ReadLine();
             if (input.Equals("C")) return;
-            if (input.Equals("Q")) System.Environment.Exit(0);
+            if (input.Equals("Q")) new QuitCommand().Execute(database);
 
             VehicleType type = input == "truck" ? VehicleType.TRUCK : VehicleType.CAR;
 

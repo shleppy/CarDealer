@@ -12,35 +12,49 @@ namespace Assignment1.Commands
     {
         public void Execute(IDBAccess<Vehicle> database)
         {
+            database = (InMemoryDB)database;
             // list all vehicles
-            Console.WriteLine("\nAll Cars:\n\n");
-            PrintCars((IEnumerable<Car>)database.GET().Where(x => x.Type == VehicleType.CAR));
-
+            Console.WriteLine("\nAll Cars:\n");
+            PrintCars(database.GET().Where(x => x.Type == VehicleType.CAR).Cast<Car>());
+            PrintTrucks(database.GET().Where(x => x.Type == VehicleType.TRUCK).Cast<Truck>());
 
             Console.WriteLine("\nAll Trucks:\n\n");
         }
 
         private void PrintCars(IEnumerable<Car> cars)
         {
-            int idColWidth = cars.Max(x => x.VehicleId);
-            int brandColWidth = cars.Max(x => x.Brand.Length);
-            int modelColWidth = cars.Max(x => x.Model.Length);
+            int idColWidth = cars.Max(x => x.VehicleId.ToString().Length) + 2;
+            int brandColWidth = cars.Max(x => x.Brand.Length) + 5;
+            int modelColWidth = cars.Max(x => x.Model.Length) + 5;
             int licenseColWidth = cars.Max(x => x.LicensePlate.Length);
-            int priceColWidth = cars.Max(x => x.Price);
-            int yearColWidth = cars.Max(x => x.YearBuilt);
+            int priceColWidth = cars.Max(x => x.Price.ToString().Length) + 5;
+            int yearColWidth = cars.Max(x => x.YearBuilt.ToString().Length);
+
+            if (licenseColWidth < 13) licenseColWidth = 13;
+            if (brandColWidth < 5) brandColWidth = 5;
+            if (modelColWidth < 5) modelColWidth = 5;
+            if (priceColWidth < 5) priceColWidth = 5;
+            if (yearColWidth < 4) yearColWidth = 4;
 
             // Header
             Console.WriteLine($"| {"ID".PadRight(idColWidth)} | " +
-                $"{"Licanse".PadRight(licenseColWidth)} | " +
+                $"{"License".PadRight(licenseColWidth)} | " +
                 $"{"Brand".PadRight(brandColWidth)} | " +
                 $"{"Model".PadRight(modelColWidth)} | " +
                 $"{"Price".PadRight(priceColWidth)} | " +
                 $"{"Year".PadRight(yearColWidth)} |");
+            Console.WriteLine($"|-{"-".PadRight(idColWidth, '-')}-" +
+                $"|-{"-".PadRight(licenseColWidth, '-')}-" +
+                $"|-{"-".PadRight(brandColWidth, '-')}-" +
+                $"|-{"-".PadRight(modelColWidth, '-')}-" +
+                $"|-{"-".PadRight(priceColWidth, '-')}-" +
+                $"|-{"-".PadRight(yearColWidth, '-')}-|");
 
             // Data
             foreach (var car in cars)
             {
-                Console.WriteLine($"| {car.LicensePlate.PadRight(licenseColWidth)} | " +
+                Console.WriteLine($"| {car.VehicleId.ToString().PadRight(idColWidth)} | " +
+                    $"{car.LicensePlate.PadRight(licenseColWidth)} | " +
                     $"{car.Brand.PadRight(brandColWidth)} | " +
                     $"{car.Model.PadRight(modelColWidth)} | " +
                     $"{car.Price.ToString().PadRight(priceColWidth)} | " +
@@ -48,9 +62,9 @@ namespace Assignment1.Commands
             }
         }
 
-        private void PrintTrucks(IDBAccess<Vehicle> database)
+        private void PrintTrucks(IEnumerable<Truck> trucks)
         {
-
+            // TODO print all trucks like cars
         }
 
     }

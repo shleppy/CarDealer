@@ -31,7 +31,7 @@ namespace Assignment1.DBAccess
             return Dealer.FindVehicleByLicensePlate(license);
         }
 
-        public List<Vehicle> GET()
+        public IEnumerable<Vehicle> GET()
         {
             return Dealer.GetAllVehicles();
         }
@@ -49,5 +49,11 @@ namespace Assignment1.DBAccess
         }
 
         // todo
+
+        public void PRINT()
+        {
+
+        }
+        
     }
 }

@@ -12,7 +12,7 @@ namespace Assignment1.Commands
     {
         public void Execute(IDBAccess<Vehicle> database)
         {
-            // quit application
+            System.Environment.Exit(0);
         }
     }
 }
