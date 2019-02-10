@@ -61,8 +61,8 @@
     <Compile Include="Commands\AlterVehiclesCommands\ChangeNothingCommand.cs" />
     <Compile Include="Commands\AlterVehiclesCommands\ChangeNrOfSeatsCommand.cs" />
     <Compile Include="Commands\AlterVehiclesCommands\IVehicleModCommand.cs" />
-    <Compile Include="DBAccess\DBAccess.cs" />
-    <Compile Include="DBAccess\InMemory.cs" />
+    <Compile Include="Persistence\DBAccess.cs" />
+    <Compile Include="Persistence\InMemory.cs" />
     <Compile Include="Strategy\InflatedStrategy.cs" />
     <Compile Include="Strategy\IPriceStrategy.cs" />
     <Compile Include="Strategy\NormalPriceStrategy.cs" />

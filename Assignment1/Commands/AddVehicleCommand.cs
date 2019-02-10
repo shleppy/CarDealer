@@ -42,6 +42,11 @@ namespace Assignment1.Commands
         private Truck GetTruckInfo()
         {
             string[] brandModel = InputHelper.GetValidSpaceSeparatedSequenceInput("\n\tEnter Brand and model (brand model): ");
+            while (brandModel.Length < 2)
+            {
+                Console.Write("\nERROR ->\tPlease only enter the brand and model name, space separated.");
+                brandModel = InputHelper.GetValidSpaceSeparatedSequenceInput("\n\tEnter Brand and model (brand model): ");
+            }
             int maxweight = InputHelper.GetValidIntegerInput("\tEnter the maximum weight: ");
             string license = InputHelper.GetValidStringInput("\tEnter license plate: ");
             int price = InputHelper.GetValidIntegerInput("\tEnter price: ");
@@ -78,7 +83,7 @@ namespace Assignment1.Commands
         private void FinalizeCommand(IDBAccess<Vehicle> database, Vehicle v)
         {
             PrintSummary(v);
-            if (InputHelper.GetValidConfirmationInput("\n\tAre you sure you want to add this vehicle to the database? (y/n): "))
+            if (InputHelper.GetValidConfirmationInput("\n--> Are you sure you want to add this vehicle to the database? (y/n): "))
             {
                 database.POST(v);
             }
@@ -91,10 +96,10 @@ namespace Assignment1.Commands
         private void PrintSummary(Vehicle v)
         {
             //TODO
-            Console.WriteLine($"Vehicle {v.VehicleId}:\n" +
-                $"\tLicense: {v.LicensePlate}\n" +
-                $"\tYear Built: {v.YearBuilt}\n" +
-                $"\tPrice: {v.Price}\n");
+            Console.WriteLine($"\n\tVehicle {v.VehicleId}:\n" +
+                $"\t\tLicense: {v.LicensePlate}\n" +
+                $"\t\tYear Built: {v.YearBuilt}\n" +
+                $"\t\tPrice: {v.Price}");
         }
     }
 }

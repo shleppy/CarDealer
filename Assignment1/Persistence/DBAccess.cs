@@ -13,7 +13,7 @@ namespace Assignment1.DBAccess
         IEnumerable<T> GET();
         T GET(int id);
         T POST(T t);
-        void PUT(int id);
+        void PUT(T t);
         void DELETE(int id);
         void PRINT();
     }

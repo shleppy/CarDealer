@@ -43,9 +43,10 @@ namespace Assignment1.DBAccess
             return v;
         }
 
-        public void PUT(int id)
+        public void PUT(Vehicle vehicle)
         {
-            throw new NotImplementedException();
+            Vehicle v = GET().FirstOrDefault(x => x.VehicleId == vehicle.VehicleId);
+            v = vehicle;
         }
 
         // todo

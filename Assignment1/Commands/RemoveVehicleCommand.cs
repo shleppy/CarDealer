@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Assignment1.DBAccess;
+using Assignment1.Utils;
 using Assignment1.Vehicles;
 
 namespace Assignment1.Commands
@@ -12,8 +13,10 @@ namespace Assignment1.Commands
     {
         public void Execute(IDBAccess<Vehicle> database)
         {
-            // remove vehicles
-
+            int num = InputHelper.GetValidIntegerInput("Enter ID of vehicle to delete: ");
+            Vehicle v = database.GET(num);
+            InputHelper.GetValidConfirmationInput($"Vehicle: {v.LicensePlate}, [{v.YearBuilt}]\nAre you sure you want to remove vehicle {v.VehicleId}? (y/n): ");
+            database.DELETE(num);
         }
     }
 }

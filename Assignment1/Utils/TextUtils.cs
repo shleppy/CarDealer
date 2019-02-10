@@ -28,7 +28,7 @@ namespace Assignment1.Utils
                                        + "\t #3) With great power comes great responsibility.\n\n"
                                        + " Press h for help. ";
 
-        public static string COMMANDS = "\n Select one of the following:\n" +
+        public static string COMMANDS = "Select one of the following:\n" +
             "\t1) List All Vehicles\n" +
             "\t2) Search For Vehicles Submenu\n" +
             "\t3) Add Vehicle\n" +
@@ -36,7 +36,7 @@ namespace Assignment1.Utils
             "\t5) Increase All Prices \n" +
             "\t6) Decrease All Prices \n" +
             "\t7) Display Overview \n" +
-            "\th) This Help Menu" + "\tq) Quit\n";
+            "\th) This Help Menu" + "\tq) Quit";
     }
 
     static class InputHelper

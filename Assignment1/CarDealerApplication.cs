@@ -23,7 +23,6 @@ namespace Assignment1
             Database.POST(new Car("volkswagen", "golfR", "oh-42-ho", 43000, 2018, VehicleType.CAR));
             Database.POST(new Truck("volkswagen", "golfR", 1500, "oh-42-ho", 43000, 2018, VehicleType.TRUCK));
             while (true) {
-                
                 Console.Write("\n>>> ");
                 string command = Console.ReadLine();
 
