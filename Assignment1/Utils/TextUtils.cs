@@ -17,12 +17,18 @@ namespace Assignment1.Utils
                                             + "    | $$   | $$  | $$|  $$$$$$$      |  $$$$$$/|  $$$$$$$| $$            | $$$$$$$/|  $$$$$$$|  $$$$$$$| $$|  $$$$$$$| $$\n"
                                             + "    |__/   |__/  |__/ \\_______/       \\______/  \\_______/|__/            |_______/  \\_______/ \\_______/|__/ \\_______/|__/\n";
 
-        public static string MAIN_MENU = " ============================================\n"
-                                       + " ===              MAIN MENU               ===\n"
-                                       + " ============================================\n\n"
-                                       + "Welcome to the administration page.";
+        public static string MAIN_MENU = "\n ===================================================================\n"
+                                       + " ===                         MAIN MENU                           ===\n"
+                                       + " ===================================================================\n"
+                                       + "               Welcome to the administration page\n\n" 
+                                       + " We trust you have received the usual lecture from the local System\n"
+                                       + " Administrator. It usually boils down to these three things:\n"
+                                       + "\t #1) Respect the privacy of others.\n"
+                                       + "\t #2) Think before you type.\n"
+                                       + "\t #3) With great power comes great responsibility.\n\n"
+                                       + " Press h for help. ";
 
-        public static string COMMANDS = " Select one of the following:\n" +
+        public static string COMMANDS = "\n Select one of the following:\n" +
             "\t1) List All Vehicles\n" +
             "\t2) Search For Vehicles Submenu\n" +
             "\t3) Add Vehicle\n" +
@@ -30,7 +36,7 @@ namespace Assignment1.Utils
             "\t5) Increase All Prices \n" +
             "\t6) Decrease All Prices \n" +
             "\t7) Display Overview \n" +
-            "\th) Help Menu" + "\tq) Quit\n";
+            "\th) This Help Menu" + "\tq) Quit\n";
     }
 
     static class InputHelper

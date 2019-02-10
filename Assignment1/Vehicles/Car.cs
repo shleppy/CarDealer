@@ -24,3 +24,4 @@ namespace Assignment1.Vehicles
         public string Color { get; set; }
     }
 }
+

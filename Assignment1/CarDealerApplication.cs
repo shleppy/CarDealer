@@ -17,17 +17,20 @@ namespace Assignment1
         public void Run()
         {
             Console.WriteLine(TextProvider.WELCOME_TEXT);
-            // TODO Implement functionality
-
             Console.WriteLine(TextProvider.MAIN_MENU);
-            Console.WriteLine(TextProvider.COMMANDS);
 
-            IMenuCommand command = new AddVehicleCommand();
-            command.Execute(Database);
+            while (true) {
+                
+                Console.Write("\n>>> ");
+                string command = Console.ReadLine();
 
-            // wait for input to exit
-            Console.WriteLine("\nPress enter to exit...");
-            Console.ReadLine();
+                getCommand(command).Execute(Database);
+            }
+        }
+
+        public IMenuCommand getCommand(string command)
+        {
+             return CommandFactory.GetMenuCommand(command);
         }
     }
 }

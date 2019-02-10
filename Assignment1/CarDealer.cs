@@ -33,7 +33,7 @@ namespace Assignment1
         /// Retrieve all vehicles
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Vehicle> FindAllVehicles() => this.Vehicles;
+        public List<Vehicle> GetAllVehicles() => this.Vehicles;
 
         /// <summary>
         /// Returns the vehicle corresponding to the specified ID.

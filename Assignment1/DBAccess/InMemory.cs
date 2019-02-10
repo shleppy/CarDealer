@@ -31,6 +31,11 @@ namespace Assignment1.DBAccess
             return Dealer.FindVehicleByLicensePlate(license);
         }
 
+        public List<Vehicle> GET()
+        {
+            return Dealer.GetAllVehicles();
+        }
+
         public Vehicle POST(Vehicle vehicle)
         {
             Vehicle v = vehicle;

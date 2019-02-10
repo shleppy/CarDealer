@@ -8,6 +8,7 @@ namespace Assignment1.DBAccess
 {
     interface IDBAccess<T>
     {
+        List<T> GET();
         T GET(int id);
         T POST(T t);
         void PUT(int id);

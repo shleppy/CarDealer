@@ -28,6 +28,11 @@ namespace Assignment1.Commands
         private Car GetCarInfo()
         {
             string[] brandModel = InputHelper.GetValidSpaceSeparatedSequenceInput("\n\tEnter Brand and model (brand model): ");
+            while (brandModel.Length < 2)
+            {
+                Console.Write("\nERROR ->\tPlease only enter the brand and model name, space separated.");
+                brandModel = InputHelper.GetValidSpaceSeparatedSequenceInput("\n\tEnter Brand and model (brand model): ");
+            }
             string license = InputHelper.GetValidStringInput("\tEnter license plate: ");
             int price = InputHelper.GetValidIntegerInput("\tEnter price: ");
             int yearBuilt = InputHelper.GetValidIntegerInput("\tEnter the year the car was built: ");
