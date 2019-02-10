@@ -25,6 +25,8 @@ namespace Assignment1
             while (true) {
                 Console.Write("\n>>> ");
                 string command = Console.ReadLine();
+                
+                // TODO commands search submenu, search functions, display overview, refactor database
 
                 getCommand(command).Execute(Database);
             }
