@@ -18,21 +18,23 @@ namespace Assignment1
         {
             Console.WriteLine(TextProvider.WELCOME_TEXT);
             Console.WriteLine(TextProvider.MAIN_MENU);
+
+            // pre-populating database
             Database.POST(new Car("bmw", "m5", "test-2", 57500, 2015, VehicleType.CAR));
             Database.POST(new Car("audi", "rs6", "ok-522", 125000, 2017, VehicleType.CAR));
             Database.POST(new Car("volkswagen", "golfR", "oh-42-ho", 43000, 2018, VehicleType.CAR));
             Database.POST(new Truck("volkswagen", "golfR", 1500, "oh-42-ho", 43000, 2018, VehicleType.TRUCK));
+
             while (true) {
                 Console.Write("\n>>> ");
-                string command = Console.ReadLine();
-                
                 // TODO commands search submenu, search functions, display overview, refactor database
 
-                getCommand(command).Execute(Database);
+                string command = Console.ReadLine();
+                GetCommand(command).Execute(Database);
             }
         }
 
-        public IMenuCommand getCommand(string command)
+        public IMenuCommand GetCommand(string command)
         {
              return CommandFactory.GetMenuCommand(command);
         }

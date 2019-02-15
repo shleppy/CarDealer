@@ -40,5 +40,14 @@ namespace Assignment1.Commands
                 default: return new ChangeNothingCommand<Car>(); ;
             }
         }
+
+        public static ISearchCommand GetSearchCommand(int command)
+        {
+            switch (command)
+            {
+                case 1: return new SearchVehicleByIdCommand();
+            }
+            return null;
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.DBAccess
 {
-    interface IDBAccess<T>
+    public interface IDBAccess<T>
         where T : Vehicle
     {
         IEnumerable<T> GET();

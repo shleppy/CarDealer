@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Assignment1.Commands
 {
-    interface IMenuCommand
+    public interface IMenuCommand
     {
         void Execute(IDBAccess<Vehicle> database);
     }

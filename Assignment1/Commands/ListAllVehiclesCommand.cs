@@ -8,7 +8,7 @@ using Assignment1.Vehicles;
 
 namespace Assignment1.Commands
 {
-    class ListAllVehiclesCommand : IMenuCommand
+    public class ListAllVehiclesCommand : IMenuCommand
     {
         public void Execute(IDBAccess<Vehicle> database)
         {
@@ -21,7 +21,7 @@ namespace Assignment1.Commands
             Console.WriteLine("\nAll Trucks:\n\n");
         }
 
-        private void PrintCars(IEnumerable<Car> cars)
+        public void PrintCars(IEnumerable<Car> cars)
         {
             int idColWidth = cars.Max(x => x.VehicleId.ToString().Length) + 2;
             int brandColWidth = cars.Max(x => x.Brand.Length) + 5;

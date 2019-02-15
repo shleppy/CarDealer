@@ -51,6 +51,7 @@
     <Compile Include="Commands\HelpCommand.cs" />
     <Compile Include="Commands\IMenuCommand.cs" />
     <Compile Include="Commands\IncreasePricesCommand.cs" />
+    <Compile Include="Commands\ISearchCommand.cs" />
     <Compile Include="Commands\ListAllVehiclesCommand.cs" />
     <Compile Include="Commands\QuitCommand.cs" />
     <Compile Include="Commands\RemoveVehicleCommand.cs" />
@@ -61,12 +62,14 @@
     <Compile Include="Commands\AlterVehiclesCommands\ChangeNothingCommand.cs" />
     <Compile Include="Commands\AlterVehiclesCommands\ChangeNrOfSeatsCommand.cs" />
     <Compile Include="Commands\AlterVehiclesCommands\IVehicleModCommand.cs" />
+    <Compile Include="Commands\SearchCommands\SearchVehicleByIdCommand.cs" />
     <Compile Include="Persistence\DBAccess.cs" />
     <Compile Include="Persistence\InMemory.cs" />
     <Compile Include="Strategy\InflatedStrategy.cs" />
     <Compile Include="Strategy\IPriceStrategy.cs" />
     <Compile Include="Strategy\NormalPriceStrategy.cs" />
     <Compile Include="Strategy\SaleStrategy.cs" />
+    <Compile Include="Utils\InputHelper.cs" />
     <Compile Include="Utils\TextUtils.cs" />
     <Compile Include="CarDealer.cs" />
     <Compile Include="MainProgram.cs" />
